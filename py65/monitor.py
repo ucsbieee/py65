@@ -262,7 +262,7 @@ class Monitor(cmd.Cmd):
         self._output("version\t\tDisplay Py65 version information.")
 
     def do_version(self, args):
-        self._output("\nPy65 Monitor")
+        self._output("\nPy65 Monitor UCSB IEEE Edition")
 
     def help_help(self):
         self._output("help\t\tPrint a list of available actions.")
