@@ -458,7 +458,7 @@ class Monitor(cmd.Cmd):
             return self.help_goto()
 
         self._mpu.pc = self._address_parser.number(args)
-        brks = [0x00]  # BRK
+        brks = [0xDB]  # STP
         self._run(stopcodes=brks)
 
     def _run(self, stopcodes):
