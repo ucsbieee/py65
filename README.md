@@ -11,22 +11,20 @@ Py65ucsbieee is a fork of [mnaberez/py65](https://github.com/mnaberez/py65). Her
 
 ## Getting Started
 
----------------
-
 To build and install py65ucsbieee:
 
-```
-$ cd ${PY65UCSBIEEE}
-$ python setup.py install --user
-```
+~~~bash
+cd ${PY65UCSBIEEE}
+python setup.py install --user
+~~~
 
 Now, `py65mon` should be installed. Note that you may need to configure your envoronment variables.
 
 To run:
 
-```
-$ py65mon
-```
+~~~bash
+py65mon
+~~~
 
 # Py65
 
