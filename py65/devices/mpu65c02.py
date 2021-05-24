@@ -267,7 +267,13 @@ class MPU(mpu6502.MPU):
 
     @instruction(name="WAI", mode='imp', cycles=3)
     def inst_0xcb(self):
-        self.inst_0x00()
+        pc = (self.pc + 1) & self.addrMask
+        self.stPushWord(pc)
+
+        self.stPush(self.p | self.BREAK | self.UNUSED)
+
+        self.p |= self.INTERRUPT
+        self.pc = self.WordAt(self.IRQ)
 
     @instruction(name="CMP", mode='zpi', cycles=5)
     def inst_0xd2(self):
