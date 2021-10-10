@@ -297,7 +297,7 @@ class Monitor(cmd.Cmd):
         self._output("version\t\tDisplay Py65 version information.")
 
     def do_version(self, args):
-        self._output("\nPy65 Monitor")
+        self._output("\nPy65 Monitor UCSB IEEE Edition")
 
     def help_help(self):
         self._output("help\t\tPrint a list of available actions.")
@@ -493,8 +493,8 @@ class Monitor(cmd.Cmd):
             return self.help_goto()
 
         self._mpu.pc = self._address_parser.number(args)
-        brks = [0x00]  # BRK
-        self._run(stopcodes=brks)
+        stps = [0xdb]  # STP
+        self._run(stopcodes=stps)
 
     def _run(self, stopcodes):
         stopcodes = set(stopcodes)
@@ -505,7 +505,7 @@ class Monitor(cmd.Cmd):
         # Switch to immediate (noncanonical) no-echo input mode on POSIX
         # operating systems.  This has no effect on Windows.
         console.noncanonical_mode(self.stdin)
-        
+
         if not breakpoints:
             while True:
                 mpu.step()

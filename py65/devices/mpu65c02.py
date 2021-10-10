@@ -267,7 +267,8 @@ class MPU(mpu6502.MPU):
 
     @instruction(name="WAI", mode='imp', cycles=3)
     def inst_0xcb(self):
-        self.waiting = True
+        if ( self.p & self.INTERRUPT ):
+            self.irq()
 
     @instruction(name="CMP", mode='zpi', cycles=5)
     def inst_0xd2(self):
