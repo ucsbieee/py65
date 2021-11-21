@@ -9,6 +9,7 @@ Py65ucsbieee is a fork of [mnaberez/py65](https://github.com/mnaberez/py65). Her
   - `WAI` instruction acts as if an IRQ is always pending.
   - `do_goto()` no longer pauses on `BRK`, and now pauses on `STP`.
   - `BRK` now pushes correct `RTI` address.
+  - `_run()` now checks for stop condition on first instruction.
 
 ## Getting Started
 

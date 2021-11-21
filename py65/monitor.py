@@ -508,12 +508,11 @@ class Monitor(cmd.Cmd):
 
         if not breakpoints:
             while True:
-                mpu.step()
                 if mem[mpu.pc] in stopcodes:
                     break
+                mpu.step()
         else:
             while True:
-                mpu.step()
                 pc = mpu.pc
                 if mem[pc] in stopcodes:
                     break
@@ -521,6 +520,7 @@ class Monitor(cmd.Cmd):
                     msg = "Breakpoint %d reached."
                     self._output(msg % self._breakpoints.index(pc))
                     break
+                mpu.step()
 
         # Switch back to the previous input mode.
         console.restore_mode()
