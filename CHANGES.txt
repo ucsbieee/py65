@@ -1,8 +1,9 @@
-ucsbieee (2021-10-09)
+ucsbieee (2021-11-20)
 ------------------
 
   - `WAI` instruction acts as if an IRQ is always pending.
   - `do_goto()` no longer pauses on `BRK`, and now pauses on `STP`.
+  - `BRK` now pushes correct `RTI` address.
 
 
 2.0.0.dev0 (Next Release)

@@ -5,9 +5,10 @@ Respository: <https://github.com/ucsbieee/py65>
 
 Py65ucsbieee is a fork of [mnaberez/py65](https://github.com/mnaberez/py65). Here are the changes from the original:
 
-- ucsbieee (2021-10-09)
+- ucsbieee (2021-11-20)
   - `WAI` instruction acts as if an IRQ is always pending.
   - `do_goto()` no longer pauses on `BRK`, and now pauses on `STP`.
+  - `BRK` now pushes correct `RTI` address.
 
 ## Getting Started
 
