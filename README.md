@@ -17,7 +17,7 @@ To build and install py65ucsbieee:
 
 ```bash
 cd ${PY65UCSBIEEE}
-python setup.py install --user # don't use sudo
+python3 setup.py install --user # don't use sudo
 ```
 
 Now, `py65mon` should be installed. Note that you may need to configure your envoronment variables.
